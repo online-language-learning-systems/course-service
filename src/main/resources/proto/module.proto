@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.hub.course_service.grpc.module";
+option java_multiple_files = true;
+
+service ModuleService {
+  rpc GetModuleIdsForCourse (CourseIdRequest)
+      returns (ModuleListResponse);
+}
+
+message CourseIdRequest {
+  int64 courseId = 1;
+}
+
+message ModuleListResponse {
+  repeated int64 moduleIds = 1;
+}

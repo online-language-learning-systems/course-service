@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "com.hub.course_service.grpc.lesson";
+option java_multiple_files = true;
+
+import "module.proto";
+
+service LessonService {
+  rpc GetLessonIdsForCourse (CourseIdRequest)
+      returns (LessonIdsResponse);
+}
+
+message LessonIdsResponse {
+  repeated int64 lessonIds = 1;
+}
